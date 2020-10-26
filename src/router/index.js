@@ -5,6 +5,7 @@ import NProgress from 'nprogress'
 import store from '@/store/store'
 import NotFound from '../views/NotFound.vue'
 import NetworkIssue from '../views/NetworkIssue'
+import Ruler from '../views/Ruler'
 
 Vue.use(VueRouter)
 
@@ -14,6 +15,10 @@ const routes = [
     name: 'event-list',
     component: EventList,
     props: true
+  },
+  {
+    path: '/ruler',
+    component: Ruler
   },
   {
     path: '/event/create',

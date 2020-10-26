@@ -4,6 +4,9 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store/store'
 import 'nprogress/nprogress.css'
+import Vuelidate from 'vuelidate'
+import DateFilter from './filters/date'
+import CapitalizeFilter from './filters/capitalize'
 
 import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
@@ -23,6 +26,12 @@ requireComponent.keys().forEach(fileName => {
 
   Vue.component(componentName, componentConfig.default || componentConfig)
 })
+
+Vue.use(Vuelidate)
+
+Vue.filter('date', DateFilter)
+
+Vue.filter('capitalize', CapitalizeFilter)
 
 Vue.config.productionTip = false
 
